@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.9.34723.18
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "LogTagger", "LogTagger.csproj", "{617BDE51-4A6C-4EC6-A124-90882A35E068}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{617BDE51-4A6C-4EC6-A124-90882A35E068}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{617BDE51-4A6C-4EC6-A124-90882A35E068}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{617BDE51-4A6C-4EC6-A124-90882A35E068}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{617BDE51-4A6C-4EC6-A124-90882A35E068}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {041C9777-1DB5-4578-8039-D1FF17858BB1}
+	EndGlobalSection
+EndGlobal
