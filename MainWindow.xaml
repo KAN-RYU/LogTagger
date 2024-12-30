@@ -5,10 +5,26 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:LogTagger"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
+        Title="채팅 분석" Height="900" Width="1600">
     <Grid>
-        <TextBox x:Name="Contents_Box" Margin="10,10,10,60" TextWrapping="Wrap" Text="TextBox"/>
-        <Button x:Name="Button_Log_Open" Content="채팅 로그 열기" Margin="699,400,10,10" Click="Button_Log_Open_Click" />
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="1*"></ColumnDefinition>
+            <ColumnDefinition Width="2*"></ColumnDefinition>
+        </Grid.ColumnDefinitions>
+        <Grid Grid.Column="0">
+            <DataGrid x:Name="tag_Table" Margin="10,10,10,55"/>
+            <Button x:Name="Button_Add_Tag" Content="태그 추가" Margin="10,0,0,10" Click="Button_Add_Tag_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="118" Height="30" />
+            <Button x:Name="Button_Delete_Tag" Content="태그 삭제" Margin="133,0,0,10" Click="Button_Delete_Tag_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="118" Height="30" />
+            <Button x:Name="Button_Save_Tag" Content="태그 저장" Margin="256,0,0,10" Click="Button_Save_Tag_Click" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="118" Height="30" />
+        </Grid>
 
+        <Grid Grid.Column="1">
+            <DataGrid x:Name="log_Table" Margin="10,10,10,55"/>
+            <Label x:Name="label" Content="사명" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom"/>
+            <TextBox x:Name="Company_Text" HorizontalAlignment="Left" Margin="49,0,0,14" TextWrapping="Wrap" Text="사명을 입력하세요" VerticalAlignment="Bottom" Width="213"/>
+            
+            <Button x:Name="Button_Log_Export" Content="엑셀로 저장" Margin="0,0,133,10" Click="Button_Log_Export_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="118" Height="30" />
+            <Button x:Name="Button_Log_Open" Content="채팅 로그 열기" Margin="0,0,10,10" Click="Button_Log_Open_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="118" Height="30" />
+        </Grid>
     </Grid>
 </Window>
