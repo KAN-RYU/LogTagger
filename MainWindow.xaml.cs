@@ -231,9 +231,10 @@ namespace LogTagger
                     var logRow = new List<Cell>();
                     for (int j = 0; j < log_data.Columns.Count; j++)
                     {
+                        if (j == 1) continue;
                         logRow.Add(new Cell((string?)log_data.Rows[i][j], postStyleId));
                     }
-                    var rowOptions = new RowOptions { Height = 50};
+                    var rowOptions = new RowOptions { Height = 50 };
 
                     await spreadsheet.AddRowAsync(logRow, rowOptions);   
                 }
