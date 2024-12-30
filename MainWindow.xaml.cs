@@ -37,6 +37,15 @@ namespace LogTagger
             Load_Data();
         }
 
+        private void ShowMessageBox(string message)
+        {
+            string caption = "알림";
+            MessageBoxButton button = MessageBoxButton.OK;
+            MessageBoxImage icon = MessageBoxImage.None;
+
+            MessageBox.Show(message, caption, button, icon);
+        }
+
         private void Button_Log_Open_Click(object sender, RoutedEventArgs e)
         {
             Microsoft.Win32.OpenFileDialog dlg = new Microsoft.Win32.OpenFileDialog
@@ -173,6 +182,8 @@ namespace LogTagger
             }
             saveJson.Add("tags", tags);
             File.WriteAllText(filename, saveJson.ToString());
+
+            ShowMessageBox("태그 저장이 완료되었습니다.");
         }
 
         private void Button_Add_Tag_Click(object sender, RoutedEventArgs e)
@@ -229,6 +240,8 @@ namespace LogTagger
 
                 await spreadsheet.FinishAsync();
             }
+
+            ShowMessageBox("엑셀 파일 저장이 완료되었습니다.");
         }
     }
 }
