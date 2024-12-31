@@ -30,7 +30,7 @@ namespace LogTagger
 
 
             log_data.Columns.Add("일시", typeof(string));
-            log_data.Columns.Add("보낸이", typeof(string));
+            //log_data.Columns.Add("보낸이", typeof(string));
             log_data.Columns.Add("내용", typeof(string));
             log_data.Columns.Add("태그", typeof(string));
 
