@@ -22,7 +22,10 @@
             <DataGrid x:Name="log_Table" Margin="10,10,10,55"/>
             <Label x:Name="label" Content="사명" HorizontalAlignment="Left" Margin="10,0,0,10" VerticalAlignment="Bottom"/>
             <TextBox x:Name="Company_Text" HorizontalAlignment="Left" Margin="49,0,0,14" TextWrapping="Wrap" Text="사명을 입력하세요" VerticalAlignment="Bottom" Width="213"/>
-            
+            <DatePicker x:Name="Date_From" Margin="0,0,444,13" HorizontalAlignment="Right" Width="130" Height="24" VerticalAlignment="Bottom" />
+            <Label x:Name="label복사__C_" Content="~" Margin="0,0,421,11" HorizontalAlignment="Right" Width="18" Height="26" VerticalAlignment="Bottom"/>
+            <DatePicker x:Name="Date_To" Margin="0,0,286,13" HorizontalAlignment="Right" Width="130" Height="24" VerticalAlignment="Bottom"/>
+
             <Button x:Name="Button_Log_Export" Content="엑셀로 저장" Margin="0,0,133,10" Click="Button_Log_Export_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="118" Height="30" />
             <Button x:Name="Button_Log_Open" Content="채팅 로그 열기" Margin="0,0,10,10" Click="Button_Log_Open_Click" VerticalAlignment="Bottom" HorizontalAlignment="Right" Width="118" Height="30" />
         </Grid>

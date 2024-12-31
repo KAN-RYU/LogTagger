@@ -35,6 +35,9 @@ namespace LogTagger
             log_data.Columns.Add("태그", typeof(string));
 
             Load_Data();
+
+            Date_To.SelectedDate = DateTime.Now;
+            Date_From.SelectedDate = DateTime.Now.AddMonths(-1);
         }
 
         private void ShowMessageBox(string message)
@@ -70,7 +73,7 @@ namespace LogTagger
                 bool firstFlag = true;
 
                 Regex chatFirstRegex = new Regex(@"^\[.*\] \[.*[0-9]+:[0-9]+\]");
-                Regex chatDayRegex = new Regex(@"^-+.+-+$");
+                Regex chatDayRegex = new Regex(@"^-+.+년.+월.+일.+-+$");
                 Regex chatInsideBracket = new Regex(@"\[([^\]]+)\]");
 
                 while ((line = sr.ReadLine()) != null)
@@ -85,6 +88,11 @@ namespace LogTagger
                     void addRow()
                     {
                         if (!linePost.Contains(Company_Text.Text)) return;
+                        DateTime parsedTime = DateTime.Parse(currentDay);
+                        if (parsedTime < Date_From.SelectedDate || Date_To.SelectedDate < parsedTime)
+                        {
+                            return;
+                        }
 
                         MatchCollection matches = chatInsideBracket.Matches(lineHeader);
                         string time = currentDay + " " + matches[1].Groups[1].Value;
