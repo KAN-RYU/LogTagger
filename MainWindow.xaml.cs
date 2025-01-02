@@ -30,9 +30,9 @@ namespace LogTagger
 
 
             log_data.Columns.Add("일시", typeof(string));
-            //log_data.Columns.Add("보낸이", typeof(string));
+            log_data.Columns.Add("보낸이", typeof(string));
             log_data.Columns.Add("내용", typeof(string));
-            log_data.Columns.Add("태그", typeof(string));
+            log_data.Columns.Add("분류", typeof(string));
 
             Load_Data();
 
@@ -219,13 +219,14 @@ namespace LogTagger
             {
                 var worksheetOptions = new WorksheetOptions();
                 worksheetOptions.Column(1).Width = 40;
-                worksheetOptions.Column(2).Width = 30;
-                worksheetOptions.Column(3).Width = 100;
+                //worksheetOptions.Column(2).Width = 30;
+                worksheetOptions.Column(2).Width = 100;
                 await spreadsheet.StartWorksheetAsync("Sheet 1", worksheetOptions);
 
                 var row = new List<Cell>();
                 for (int i = 0; i < log_data.Columns.Count; i++)
                 {
+                    if (i == 1) continue;
                     row.Add(new Cell(log_data.Columns[i].ColumnName));
                 }
                 await spreadsheet.AddRowAsync(row);
